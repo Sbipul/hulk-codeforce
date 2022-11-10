@@ -9,18 +9,16 @@ try {
     const num = parseInt(answer);
     let str = [];
     if (1 <= num && num <= 100) {
-      if (num > 1) {
-        for (let index = 0; index < num; index++) {
-          if (index % 2 !== 0) {
-            str.push("that I love");
-          } else {
-            str.push("that I hate ");
-          }
+      for (let index = 0; index < num; index++) {
+        if (index % 2 !== 0) {
+          str.push("that I love");
+        } else if (index === 0) {
+          str.push("I hate");
+        } else {
+          str.push("that I hate");
         }
-        str.push("it");
-      } else {
-        str.push("I hate it ");
       }
+      str.push("it");
     }
     let newStr = "";
     str.forEach((strin) => {
